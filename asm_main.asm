@@ -12,11 +12,11 @@ segment .data
         SUCCESS: equ 0
         kernelcall: equ 80h
 
-
-
+array: dw 1,2,3,4,5
 ; uninitialized data is put in the .bss segment
 ;
 segment .bss
+
 
 ;
 ; code is put in the .text segment
@@ -27,6 +27,32 @@ asm_main:
         enter   0,0               ; setup routine
         pusha
 ; *********** Start  Assignment Code *******************
+
+	
+
+
+
+	mov eax, array
+	mov ebx, [eax]
+	push ebp
+	mov ebp, esp
+	
+
+
+FIRST:
+
+
+SEC:
+	inc edi
+		
+
+
+
+
+
+
+end:
+
 
 ; *********** End Assignment Code **********************
 
